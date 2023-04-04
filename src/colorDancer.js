@@ -1,6 +1,8 @@
 var makeColorDancer = function(left, top, timeBetweenSteps) {
   makeDancer.apply(this, arguments);
   this.counter = 0;
+  this.$node.append("<img class='colorDancerGif' src='./assets/dancinglisa.gif' />'");
+  this.$node.addClass("colorDancer");
 };
 
 makeColorDancer.prototype = Object.create(makeDancer.prototype);

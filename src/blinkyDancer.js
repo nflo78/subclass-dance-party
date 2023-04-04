@@ -1,5 +1,7 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.apply(this, arguments);
+  this.$node.append("<img class='blinkyDancerGif' src='./assets/napoleon.gif' />");
+  this.$node.addClass("blinkyDancer");
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -16,5 +18,5 @@ makeBlinkyDancer.prototype.step = function () {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.toggle();
+  this.$node.animate({"rotate":"+=60deg"});
 };

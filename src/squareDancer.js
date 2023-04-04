@@ -1,5 +1,6 @@
 var makeSquareDancer = function (top, left, timeBetweenSteps) {
   makeDancer.apply(this, arguments);
+  this.$node.addClass("squareDancer");
 
 };
 makeSquareDancer.prototype = Object.create(makeDancer.prototype);
