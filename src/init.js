@@ -29,20 +29,20 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer.$node);
+
+    $('.dancer').on('mouseover', function(event) {
+      $(this).css({"filter":"hue-rotate(180deg)"});
+    });
   });
 
   $('.lineUpButton').on('click', function(event) {
-    // for each element in window.dancers
     var topVal = 100;
     for (var i = 0; i < window.dancers.length; i++) {
-      // set left property to some constant
-      // console.log(window.dancers[i]);
-      window.dancers[i].animate({
-        "top": topVal.toString(),
-        "left": "30"
-      });
-      // window.dancers[i].setPosition(30, topVal);
-      // set top property to some incremented value
+      window.dancers[i]
+        .animate({
+          "top": topVal.toString(),
+          "left": "30"
+        });
       topVal += 50;
     }
   });
